@@ -1,0 +1,98 @@
+body {
+    font-family:helvetica,tahoma,verdana,sans-serif;
+    font-size:12px;
+    padding:0;
+    margin:0;
+}
+#main{
+	width:900px;
+	margin:7px auto;
+}
+/* header */
+header{
+	background:#0E0E43 url('images/banner-finance.jpg') no-repeat;
+	border: 1px solid #ffffff;
+	border-radius:7px;
+	color:#ffffff;
+	margin-bottom: 7px;
+}
+footer p{
+	width:900px;
+	margin:7px auto;
+	text-align:center;
+}
+h2 {
+    font-size:30px;
+    color:#ffffff;
+    font-weight:bold;
+    margin-left: 20px;
+    margin-top:10px;
+}
+header #author {
+	margin-top:-20px;
+	margin-right:10px;
+    font-size:10px;
+    color:#ffffff;
+    font-weight:bold;
+    float: right;
+}
+/* message */
+.msg-info{
+	background:#FFFFE6;
+	color:#8F5700;
+	padding:12px;
+}
+.msg-ok{
+	background:#E6FFE6;
+	color:#8F5700;
+	padding:12px;
+}
+
+.msg-error{
+	background:#FFE6E6;
+	color:#8F5700;
+	padding:12px;
+}
+.msg-tip{
+	width:24px;
+	height:16px;
+	float:left;
+}
+/* formulaire */
+#fm{
+	margin:0;
+	padding:10px;
+}
+.ftitle{
+	font-size:14px;
+	font-weight:bold;
+	color:#666;
+	padding:5px 0;
+	margin-bottom:10px;
+	border-bottom:1px solid #ccc;
+}
+.fitem{
+	margin-bottom:5px;
+}
+.fitem label{
+	display:inline-block;
+	width:120px;
+}
+input{
+	size:120px;
+}
+#placeholder {
+	margin:auto;
+}
+#placeholder_m {
+	margin:auto;
+}
+#placeholder_g {
+	margin:auto;
+}
+
+.header{
+	background:#FFE6E6;
+	margin-bottom:5px;
+	padding-left:20px;
+}

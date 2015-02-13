@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>GCD</title>
+        <meta name="description" content="" />
+        <meta name="author" content="CAPella - Ch. Zirbes" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+        
+        <link rel="stylesheet" type="text/css" href="css/easyui.css">
+        <link rel="stylesheet" type="text/css" href="css/icon.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <script type="text/javascript" src="js/libs/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.easyui.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.flot.js"></script>
+        <script type="text/javascript" src="js/events.js"></script>
+    </head>
+    <body>
+    <div id="main">
+        <header>
+            <h2>Gestion Cabinet Dentaire</h2>
+            <div id="author">Ch. ZIRBES</div>
+        </header>
+        <div id="tt" class="easyui-tabs" style="height:600px;width: 900px">  
+            <div title="Aujourd'hui" iconCls="icon-reload" style="padding:5px;">  
+            <div id="divToday" class="article">
+            <table id="dgToday" title="Aujourd'hui" class="easyui-datagrid" style="height:auto;"
+                    url="php/get_today.php"
+                    toolbar="#tlbToday"
+                    fitColumns="true" singleSelect="true"
+                    showfooter="true"
+                    pageSize="20">
+                <thead>
+                    <tr>
+                        <th field="id" width="5" >ID</th>
+                        <th field="nom" width="15" sortable="true" >Nom</th>
+                        <th field="prenom" width="15" sortable="true">Prénom</th>
+                        <th field="s_date" width="10" sortable="true" >Description</th>
+                        <th field="s_asd" width="10"  sortable="true" align="right" >ASD</th>
+                        <th field="s_hono" width="5" align="right">Honoraires</th>
+                        <th field="s_pay" width="5" align="right">E/V</th>
+                    </tr>
+                </thead>
+            </table>
+            <div id="tlbToday">
+                <input id="dd" type="text" >
+                <a id="btnPrintToday" href="#" class="easyui-linkbutton" iconCls="icon-print" plain="true">Imprimer</a>
+                <a id="btnGcdSoin" href="http://localhost/dentiste4/" class="easyui-linkbutton" iconCls="icon-dent" plain="true">Retour gestion soin</a>
+            </div>
+            </div>            
+            </div>
+            <div title="Virements" iconCls="icon-reload" style="padding:5px;">  
+            <div id="divVirements" class="article">
+            <table id="dgVirements" title="Virements" class="easyui-datagrid" height="550" style="height:550;"
+                    url="php/get_virements.php"
+                    toolbar="#tlbVirements"
+                    fitColumns="true" singleSelect="true"
+                    showfooter="true"
+                    pageSize="20">
+                <thead>
+                    <tr>
+                        <th field="id" width="5" >ID</th>
+                        <th field="nom" width="15" sortable="true" >Nom</th>
+                        <th field="prenom" width="15" sortable="true">Prénom</th>
+                        <th field="s_date" width="10" sortable="true" >Description</th>
+                        <th field="s_asd" width="10" align="right" >ASD</th>
+                        <th field="s_hono" width="5" align="right">Honoraires</th>
+                        <th field="s_pay_le" width="10" sortable="true" align="right">Payé le</th>
+                    </tr>
+                </thead>
+            </table>
+            <div id="tlbVirements">
+                <a id="btnEditVirements" href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Payé le</a>
+                <span>Année: </span>  
+                <input id="cmbAnnees"  name="an" style="width:55px">
+                <a id="btnPrintVir" href="#" class="easyui-linkbutton" iconCls="icon-print" plain="true">Imprimer</a>
+            </div>
+            </div>            
+            </div>
+            <div title="Anniversaires" iconCls="icon-reload" style="padding:5px;">  
+            <div id="divAnniv" class="article">
+            <table id="dgAnniv" title="Virements" class="easyui-datagrid" height="550" style="height:550;"
+                    url="php/get_anniv.php"
+                    toolbar="#tlbAnniv"
+                    fitColumns="true" singleSelect="true"
+                    pageSize="20">
+                <thead>
+                    <tr>
+                        <th field="sis" width="7" sortable="true" >SIS</th>
+                        <th field="jour" width="2" sortable="true" >Jour</th>
+                        <th field="nom" width="15">Nom</th>
+                        <th field="prenom" width="15">Prénom</th>
+                        <th field="age" width="2" >Age</th>
+                    </tr>
+                </thead>
+            </table>
+            <div id="tlbAnniv">
+                <span>Mois: </span>  
+                <input id="cmbMoisAnniv"  name="mois" style="width:85px">
+                <a id="btnPrintAnniv" href="#" class="easyui-linkbutton" iconCls="icon-print" plain="true">Imprimer</a>
+           </div>
+            </div>            
+            </div>
+            <div title="Bilan par Mois" iconCls="icon-reload" style="padding:5px;">  
+                <div id="header-bil-mois" class="header">
+                    <strong>Bilan par Mois pour l'année:  </strong>
+                    <input id="cmbAnneesBil"  name="an" style="width:55px">
+                    <span></span>
+                </div>
+                <div id="placeholder" style="width:800px;height:500px"></div>
+            </div>
+            <div title="Bilan par An" iconCls="icon-reload" style="padding:5px;">  
+                <div id="header-bil-an" class="header">
+                    <strong>Bilan des années pour un Mois:  </strong>
+                    <input id="cmbMoisBil"  name="moisbil" style="width:85px">
+                    <span></span>
+                </div>
+                <div id="placeholder_m" style="width:800px;height:500px"></div>
+            </div>
+            <div id="tab_g" title="Bilan Global" iconCls="icon-reload" style="padding:5px;">  
+                <div id="header-bil-global" class="header">
+                    <strong>Bilan Global  </strong>
+                    <a id="btnGlobalReload" href="#" class="easyui-linkbutton" iconCls="icon-reload" plain="true"></a>
+                    <span></span>
+                </div>
+                <div id="placeholder_g" style="width:800px;height:500px"></div>
+            </div>
+        </div>
+        <div id="dlgVirements" class="easyui-dialog" style="width:280px;height:350px;padding:10px"
+                closed="true" >
+            <div class="ftitle">Virement payé</div>
+            <form id="fm" method="post" novalidate>
+                <div class="fitem">
+                    <label>Date du paiement :</label>
+                    <div id="cc" style="width:180px;height:180px;"></div>
+                    <br /> 
+                    <a id="btnNonPaye" href="#" class="easyui-linkbutton" iconCls="icon-no">Non Payé</a> 
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>GCD-4.0 -2012 - &copy; Copyright  by CAPella - Ch. ZIRBES</p>
+        </footer>
+        
+    </div>
+    </body>
+</html>
