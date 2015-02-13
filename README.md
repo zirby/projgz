@@ -1,2 +1,2 @@
 # projgz
-Gestion de projet php (noo)
+Gestion de projet en php (noo)
